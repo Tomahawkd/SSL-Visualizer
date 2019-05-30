@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html style="height: 100%" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Unsecured SSL/TLS Configuration/Implementation Distribution Map</title>
+</head>
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%"></div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/incubator-echarts/echarts.all.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript"
+        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="/js/worldmap.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script type="text/javascript">
+    const dom = document.getElementById("container");
+    const myChart = echarts.init(dom);
+    var data = [
+        {name: "China", value: 100},
+        {name: "United States", value: 400},
+    ];
+
+    option = {
+        title: {
+            text: 'Unsecured SSL/TLS Configuration/Implementation Distribution Map',
+            subtext: 'Project under Study on SSL/TLS Security Study',
+        },
+        tooltip: {
+            backgroundColor: "#1540a1",
+            borderColor: "#FFFFCC",
+            trigger: 'item',
+            formatter: 'Country: {b}<br/>Value: {c}'
+        },
+        toolbox: {
+            show: true,
+            orient: 'horizontal',
+            left: 'center',
+            top: 'bottom',
+            feature: {
+                dataView: {readOnly: true},
+                saveAsImage: {},
+                magicType: {
+                    type: ['bar'],
+                    option: {
+                        data: data,
+                    },
+                }
+            }
+        },
+        visualMap: {
+            min: 0,
+            max: 500,
+            text: ['High', 'Low'],
+            realtime: false,
+            calculable: true,
+            inRange: {
+                color: ['cyan', 'yellow', 'red']
+            },
+        },
+        series: [
+
+            {
+                name: 'Unsecured SSL/TLS Configuration/Implementation Distribution Map',
+                type: 'map',
+                roam: true,
+                layoutCenter: ["50%", "50%"],
+                layoutSize: "180%",
+                mapType: 'world',
+                itemStyle: {
+                    normal: {
+                        color: "#04284e",
+                        borderColor: "#5bc1c9"
+                    },
+                    emphasis: {
+                        color: "rgba(37, 43, 61, .5)"
+                    }
+                },
+                data: data,
+                // 自定义名称映射
+                nameMap: {}
+            }
+        ]
+    };
+
+
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+</body>
+</html>
