@@ -6,14 +6,9 @@
 </head>
 <body style="height: 100%; margin: 0">
 <div id="container" style="height: 100%"></div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="/js/incubator-echarts/echarts.all.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript"
-        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/echarts.min.js"></script>
 <script type="text/javascript" src="/js/worldmap.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 <script type="text/javascript">
     const dom = document.getElementById("container");
     const myChart = echarts.init(dom);
@@ -24,8 +19,8 @@
 
     option = {
         title: {
-            text: 'Unsecured SSL/TLS Configuration/Implementation Distribution Map',
-            subtext: 'Project under Study on SSL/TLS Security Study',
+            text: 'Unsecured SSL/TLS Configuration/Implementation Statistic Map',
+            subtext: 'Project under Study on SSL/TLS Security',
         },
         tooltip: {
             backgroundColor: "#1540a1",
@@ -62,7 +57,7 @@
         series: [
 
             {
-                name: 'Unsecured SSL/TLS Configuration/Implementation Distribution Map',
+                name: 'Unsecured SSL/TLS Configuration/Implementation Statistic Map',
                 type: 'map',
                 roam: true,
                 layoutCenter: ["50%", "50%"],
