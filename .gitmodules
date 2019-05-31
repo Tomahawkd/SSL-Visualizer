@@ -1,3 +1,0 @@
-[submodule "incubator-echarts"]
-	path = js/incubator-echarts
-	url = https://github.com/apache/incubator-echarts.git
